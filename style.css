@@ -141,3 +141,13 @@ main h1.ptitle { font-size: 1.6rem; font-weight: 600; margin-bottom: 28px; color
 
 @media (max-width: 800px) { .cards { grid-template-columns: 1fr; } }
 @media (prefers-reduced-motion: reduce) { .card { transition: none; } }
+
+/* 10. MUSIC BUTTON */
+.music-btn {
+  position: fixed; right: 20px; bottom: 20px; z-index: 20;
+  padding: 10px 18px; border: 1px solid var(--navy); border-radius: 999px;
+  background: var(--white); color: var(--navy); font: 600 0.9rem var(--body); cursor: pointer;
+  box-shadow: 0 4px 14px rgba(18, 40, 76, 0.18);
+}
+.music-btn:hover { background: var(--navy); color: var(--white); }
+.music-btn:focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; }
