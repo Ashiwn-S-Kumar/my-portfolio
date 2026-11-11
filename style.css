@@ -108,3 +108,36 @@ details li, .open-list li { margin-bottom: 8px; }
 }
 
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+/* 9. MULTI-PAGE ADDITIONS */
+.links a.active { color: var(--white); box-shadow: 0 2px 0 var(--blue); }
+.links .cta.active { background: var(--blue); border-color: var(--blue); box-shadow: none; }
+
+main h1.ptitle { font-size: 1.6rem; font-weight: 600; margin-bottom: 28px; color: var(--navy); }
+.explore { padding-top: 56px; }
+
+.cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.card {
+  display: flex; flex-direction: column; gap: 8px; padding: 24px; text-decoration: none;
+  background: var(--white); border: 1px solid var(--line); border-radius: 12px; color: var(--ink);
+  transition: border-color 0.2s, transform 0.2s;
+}
+.card:hover { border-color: var(--blue); transform: translateY(-3px); }
+.card h3 { font-size: 1.1rem; color: var(--navy); }
+.card p { margin: 0; color: var(--muted); }
+.card span { margin-top: auto; padding-top: 10px; color: var(--blue); font-weight: 600; }
+
+.next-row { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; margin: 24px 0 8px; padding-top: 28px; border-top: 1px solid var(--line); }
+.btn-dark { border: 1px solid var(--line); color: var(--navy); background: var(--white); }
+.btn-dark:hover { border-color: var(--navy); }
+.btn-blue { background: var(--blue); color: var(--white); }
+.btn-blue:hover { background: #1f55d8; }
+
+.contact-page { margin-top: 0; padding: 96px 0; min-height: 60vh; }
+.ptitle-light { font-size: 1.6rem; font-weight: 600; }
+.contact-page .actions { justify-content: center; }
+.back { margin-top: 32px; }
+.back a { color: #c9d6ee; }
+
+@media (max-width: 800px) { .cards { grid-template-columns: 1fr; } }
+@media (prefers-reduced-motion: reduce) { .card { transition: none; } }
