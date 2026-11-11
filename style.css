@@ -18,7 +18,7 @@
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; scroll-padding-top: 72px; }
 body { margin: 0; font-family: var(--body); line-height: 1.65; color: var(--ink); background: var(--paper); }
-.wrap { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
+.wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
 h1, h2, h3 { font-family: var(--display); line-height: 1.15; margin: 0; }
 a { color: var(--blue); }
 a:focus-visible, summary:focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; }
@@ -27,7 +27,7 @@ a:focus-visible, summary:focus-visible { outline: 3px solid var(--blue); outline
 .nav {
   position: sticky; top: 0; z-index: 10;
   display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px 24px;
-  padding: 14px 24px; background: var(--navy);
+  padding: 14px max(24px, calc((100% - 1120px) / 2 + 24px)); background: var(--navy);
 }
 .brand { font-family: var(--display); font-weight: 600; color: var(--white); text-decoration: none; }
 .links { display: flex; align-items: center; flex-wrap: wrap; gap: 6px 22px; }
@@ -36,22 +36,22 @@ a:focus-visible, summary:focus-visible { outline: 3px solid var(--blue); outline
 .links .cta { color: var(--white); border: 1px solid #5b78ad; padding: 6px 14px; border-radius: 6px; }
 
 /* 4. HERO */
-.hero { background: linear-gradient(180deg, var(--navy), var(--navy-2)); color: var(--white); padding: 80px 0 72px; }
-.hero-grid { display: grid; grid-template-columns: 1.15fr 1fr; gap: 56px; align-items: center; }
+.hero { background: linear-gradient(180deg, var(--navy), var(--navy-2)); color: var(--white); padding: 72px 0 64px; }
+.hero-grid { display: grid; grid-template-columns: 1fr; gap: 48px; text-align: center; }
 .hero h1 { font-size: clamp(2rem, 4.5vw, 2.8rem); font-weight: 600; }
 .title { margin: 8px 0 0; font-size: 1.15rem; color: #b9c9e8; }
-.lead { font-size: 1.05rem; color: #d6e0f3; max-width: 52ch; margin: 20px 0 28px; }
-.actions { display: flex; flex-wrap: wrap; gap: 12px; margin: 0; }
+.lead { font-size: 1.05rem; color: #d6e0f3; max-width: 58ch; margin: 20px auto 28px; }
+.actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin: 0; }
 .btn { display: inline-block; padding: 12px 22px; border-radius: 8px; font-weight: 600; text-decoration: none; }
 .btn-light { background: var(--white); color: var(--navy); }
 .btn-light:hover { background: #e6edfb; }
 .btn-line { border: 1px solid #7f98c8; color: var(--white); }
 .btn-line:hover { background: rgba(255, 255, 255, 0.1); }
-.open { display: flex; align-items: center; gap: 10px; margin: 28px 0 0; color: #c9d6ee; font-size: 0.95rem; }
+.open { display: flex; align-items: center; justify-content: center; gap: 10px; margin: 28px 0 0; color: #c9d6ee; font-size: 0.95rem; }
 .led { width: 10px; height: 10px; border-radius: 50%; background: var(--green); box-shadow: 0 0 0 4px rgba(47, 209, 139, 0.25); flex: none; }
 
 /* The status wall: four result tiles */
-.wall { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.wall { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; text-align: center; }
 .tile {
   background: rgba(255, 255, 255, 0.07); border: 1px solid rgba(255, 255, 255, 0.16);
   border-radius: 12px; padding: 20px; display: flex; flex-direction: column; gap: 6px;
@@ -61,9 +61,9 @@ a:focus-visible, summary:focus-visible { outline: 3px solid var(--blue); outline
 
 /* 5. CLIENT STRIP */
 .clients { background: var(--white); border-bottom: 1px solid var(--line); padding: 22px 0; }
-.clients .wrap { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 32px; }
+.clients .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 10px 32px; }
 .clients p { margin: 0; color: var(--muted); font-size: 0.9rem; }
-.clients ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px 28px; }
+.clients ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 28px; }
 .clients li { font-weight: 500; font-size: 1rem; color: var(--navy); }
 
 /* 6. SECTIONS */
@@ -94,15 +94,16 @@ details li, .open-list li { margin-bottom: 8px; }
 .creds p:last-child { margin-bottom: 0; }
 
 /* 7. CONTACT AND FOOTER */
-.contact { background: var(--navy); color: var(--white); margin-top: 64px; padding: 64px 0; }
+.contact { text-align: center; background: var(--navy); color: var(--white); margin-top: 64px; padding: 64px 0; }
 .contact h2 { font-size: 1.5rem; font-weight: 600; }
 .contact p { color: #d6e0f3; margin: 14px 0 24px; }
-.foot { padding-top: 24px; padding-bottom: 36px; color: var(--muted); font-size: 0.9rem; }
+.foot { text-align: center; padding-top: 24px; padding-bottom: 36px; color: var(--muted); font-size: 0.9rem; }
 
 /* 8. PHONES */
 @media (max-width: 800px) {
   .hero { padding: 56px 0; }
-  .hero-grid, .role, .skills, .creds { grid-template-columns: 1fr; }
+  .role, .skills, .creds { grid-template-columns: 1fr; }
+  .wall { grid-template-columns: 1fr 1fr; }
   .role { gap: 10px; }
 }
 
